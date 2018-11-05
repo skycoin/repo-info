@@ -1,0 +1,8 @@
+# The systax of this file is as follows:
+# <folder under "repos">|<docker_image:tag>
+
+dev-cli|skycoin/skycoindev-cli:develop
+dev-docker|skycoin/skycoindev-cli:dind
+mainnet|skycoin/skycoin
+
+
