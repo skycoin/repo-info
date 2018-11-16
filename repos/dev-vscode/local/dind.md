@@ -1,17 +1,16 @@
-# `skycoin/skycoindev-vscode:dind`
+# `simelotech/skycoindev-vscode:dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c135f5d76c7c08a4348178a3cbc6ef1cbf9a1261edf281f88cc203738432a97d`
-- Created: `2018-11-08T04:12:26.182722382Z`
-- Virtual Size: ~ 2.71 Gb
+- Image ID: `sha256:60b2bf42f3950070782e146f3a8327889884a13b2ab0df3f35b0c9c5d104a1fc`
+- Created: `2018-11-13T03:32:18.087061026Z`
+- Virtual Size: ~ 2.82 Gb
     (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["start.sh"]`
-- Command: `["su","user","-p","-c","/usr/share/code/code"]`
 - Environment:
     - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-    - `GOLANG_VERSION=1.11.1`
+    - `GOLANG_VERSION=1.11.2`
     - `GOPATH=/go`
     - `NODE_VERSION=10.2.1`
     - `YARN_VERSION=1.7.0`
@@ -20,5 +19,4 @@
     - `DIND_COMMIT=3b5fac462d21ca164b3778647420016315289034`
     - `DEBIAN_FRONTEND=noninteractive`
     - `HOME=/home/user`
-    - `VS_EXTENSIONS=`
 

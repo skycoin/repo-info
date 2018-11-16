@@ -4,6 +4,6 @@
 dev-cli|skycoin/skycoindev-cli:develop
 dev-docker|skycoin/skycoindev-cli:dind
 mainnet|skycoin/skycoin
-dev-vscode|skycoin/skycoindev-vscode:develop
-dev-vscode|skycoin/skycoindev-vscode:dind
+dev-vscode|simelotech/skycoindev-vscode:develop
+dev-vscode|simelotech/skycoindev-vscode:dind
 
