@@ -4,5 +4,6 @@
 dev-cli|skycoin/skycoindev-cli:develop
 dev-docker|skycoin/skycoindev-cli:dind
 mainnet|skycoin/skycoin
+dev-python|skycoin/skycoindev-python:develop
 
 
