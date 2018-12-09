@@ -4,4 +4,8 @@ This repository includes the "metadata" or "Extended Information" for all the of
 
 It's still a firm Work In Progress, and concrete suggestions for improvement in gathering or presentation are welcome!
 
+---
+
+For the moment metadata is scraped with the help of [repo-info tools](https://github.com/simelo/repo-info-tools) . 
 We intend to make this as automated as possible in a near future.
+
