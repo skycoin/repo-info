@@ -34,6 +34,7 @@ for l in $(cat "$file" | grep -v "^#" | uniq) ; do
 
     # prepare to process
     wf="$basepath/$lpath/$folder"
+    mkdir -p "$wf"
     ln -s "$basepath/drib.sh" "$wf/"
     cd "$wf"
 
