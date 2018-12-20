@@ -39,7 +39,7 @@ for l in $(cat "$file" | grep -v "^#" | uniq) ; do
     cd "$wf"
 
     # process
-    ./drib.sh "$image"
+    ./drib.sh -a "$image"
 
     # cleanup
     rm -f drib.sh &> /dev/null 
