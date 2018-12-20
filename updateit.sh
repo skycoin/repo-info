@@ -46,4 +46,5 @@ for l in $(cat "$file" | grep -v "^#" | uniq) ; do
 done
 
 # final clean up
+cd "$basepath"
 rm -f drib.sh &> /dev/null 
