@@ -1,6 +1,6 @@
-# `simelotech/skycoindev-vscode` repo-info
+# `skycoin/skycoindev-vscode` repo-info
 
-This directory contains additional information about the published artifacts of [the `simelotech/skycoindev-vscode` image](https://hub.docker.com/r/simelotech/skycoindev-vscode).
+This directory contains additional information about the published artifacts of [the `skycoin/skycoindev-vscode` image](https://hub.docker.com/r/skycoin/skycoindev-vscode).
 
 -   [the `remote` directory](remote/):
 

@@ -1,7 +1,7 @@
-# `simelotech/skycoindev-vscode:dind`
+# `skycoin/skycoindev-vscode:develop`
 
 ```console
-$ docker pull simelotech/skycoindev-vscode@sha256:588b6f7aeb3f24a3d6d9fce48ff7dacedc8f164d60148da5b51138623927992b
+$ docker pull skycoin/skycoindev-vscode@sha256:c4cc0274e707df9b44b8f4e37554f16cfa4300b179f4969d623862feec494e14
 ```
 
 - Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -28,24 +28,13 @@ $ docker pull simelotech/skycoindev-vscode@sha256:588b6f7aeb3f24a3d6d9fce48ff7da
 	- sha256:e02c8ca8db6a9edb34c3e55c82d5c568c950aa659d48d08825273c8bb614eece
 	- sha256:5d5ff637cdc943d63f64434ae881402ca1f8e5c2b90974b04f87743460104f89
 	- sha256:d6d7f50131e244da129810a3f26064bcc44a371146ead12b282180a759a83284
-	- sha256:9f44aecefad3c87559a20a5396d11ab04039d7e30aee08e72197d6b180c4c605
-	- sha256:1756c7652bb186a2be57b80a9271c4ae293b3ce98bbe5f61bc43c816936c6b44
-	- sha256:76fb62b76413d309c05dffee225b8066f6f7eab04cc19d7a93ce6252604c55c1
-	- sha256:b933c6c5bc9e513ae8c9868a2469fa25da20f94e0ba33823f928b2912bff6214
-	- sha256:cf800d5b738b6a19adf0e2a011336cac009dfe64e06671d327ef60bb1ff79b9d
-	- sha256:f5a09baabdd1a8c41c60e17a88a768f6410cb2b1d42555959b5abe2177f7f413
-	- sha256:3a051a01d82805ce315cdcf3523d7d54d3e8b8f92ffe679e57db2d3a4e12d6e9
-	- sha256:8c8c5c4cf9eb289a2c17c8a470ed0899779977d63bb980bd6e0bc45e52b33893
-	- sha256:a9495bf967f8dc31e0e10ca276fe07ba1afc556107e9916ca17b68e8c3978d3f
-	- sha256:16a4612824b1549462fc2d416801490927548e805681df003fc10f8bd0d351c4
-	- sha256:9cfe8a2992d0358e5d33c294c081132a26243f7eb13c91164e239c92d4601ed8
-	- sha256:180bbd3287cb0676d046ee7b3dd91e6e519c675af991caf5d36842b59e772868
-	- sha256:5b7d331310daf1faa67c844709b47a942fa1a28663b6467389c8ec95d2e461cb
-	- sha256:40cc1bd367c219efbbca94f8396a4c4d729684dfd5e859bd054fd47a86523727
-	- sha256:c3ebac4d0a3c9ffd4d5f79a21e0f6d02e9f8913bf755fc17721661afda53c08a
+	- sha256:73ab727d9ce4c3aaff9d2d31c05b0494f8c9d2240c01dec00f75a2012ca9876f
+	- sha256:2fafca10167ea8212f06ed055290bd058ba1d3572d68f61f28777f0e218833ac
+	- sha256:ccdc644aca91d01f112f2a2293c0ee340aee490d460d07ed0b6eaec983458df2
+	- sha256:8b2dac6566d4a073f49cc711d9da8dd5013d30c9683e69c8e8b0c0b34d354a62
+	- sha256:3c8477e34c4bc26ef1eb5d23be21edf999d5cff37df785a38d68178717e19b39
 
 - Exposed Ports:
-	- 2375/tcp
 
 ```dockerfile
 # 2018-10-15T23:24:20.7838109Z
@@ -104,65 +93,35 @@ WORKDIR /go/src/github.com/skycoin
  VOLUME [/go/src/]
 # 2018-11-05T09:11:26.712937423Z
  ENV LD_LIBRARY_PATH=/usr/local/lib
-# 2018-11-05T09:27:03.358540248Z
-/bin/sh -c curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-# 2018-11-05T09:27:07.717991897Z
-/bin/sh -c apt-key fingerprint 0EBFCD88
-# 2018-11-05T09:27:24.900537578Z
-/bin/sh -c set -ex; apt-get update; apt-get install -y --no-install-recommends lsb-release software-properties-common apt-transport-https
-# 2018-11-05T09:27:28.434791736Z
-/bin/sh -c add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-# 2018-11-05T09:27:55.974214127Z
-/bin/sh -c set -ex; apt-get update; apt-get install -y --no-install-recommends btrfs-progs e2fsprogs iptables xfsprogs ca-certificates gnupg2 software-properties-common pigz docker-ce ; apt-get clean; rm -rf /var/lib/apt/lists/*
-# 2018-11-05T09:27:56.583699222Z
-COPY file:7542b8556b602563f72a47a7602958d8aaa7570b8d1decd67f014edcd7840d56 in /usr/local/bin/modprobe 
-# 2018-11-05T09:27:59.060525719Z
-/bin/sh -c set -x && groupadd dockremap && useradd -g dockremap dockremap && echo 'dockremap:165536:65536' >> /etc/subuid && echo 'dockremap:165536:65536' >> /etc/subgid
-# 2018-11-05T09:28:00.535261369Z
- ENV DIND_COMMIT=3b5fac462d21ca164b3778647420016315289034
-# 2018-11-05T09:28:03.128148195Z
-/bin/sh -c set -ex; wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; chmod +x /usr/local/bin/dind;
-# 2018-11-05T09:28:05.029516132Z
-COPY file:8c7efafc9ff2ddd0b88764e8647f34ab4c5bca079a93694700343d4603f7f8a6 in /usr/local/bin/ 
-# 2018-11-05T09:28:07.047217858Z
-chmod +x /usr/local/bin/dockerd-entrypoint.sh /usr/local/bin/modprobe
-# 2018-11-05T09:28:08.564376443Z
- VOLUME [/var/lib/docker]
-# 2018-11-05T09:28:10.077011982Z
- EXPOSE 2375
-# 2018-11-05T09:28:11.582953745Z
- ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
-# 2018-11-05T09:28:13.111467636Z
- CMD []
-# 2018-11-17T02:44:16.582665203Z
+# 2018-12-23T06:23:11.653393016Z
  ARG BDATE
-# 2018-11-17T02:44:18.033894749Z
+# 2018-12-23T06:23:14.601583539Z
  ARG SCOMMIT
-# 2018-11-17T02:44:19.497249336Z
+# 2018-12-23T06:23:17.166632089Z
  ARG VS_EXTENSIONS
-# 2018-11-17T02:44:20.947303852Z
- LABEL org.label-schema.name=skycoindev-cli org.label-schema.description=Docker image with go, node, dev tools and Visual Studio Code for Skycoin developers org.label-schema.vendor=Skycoin project org.label-schema.url=skycoin.net org.label-schema.schema-version=1.0.0-rc.1 org.label-schema.build-date=2018-11-17T02:43:55Z org.label-schema.vcs-url=https://github.com/skycoin/skycoin.git org.label-schema.vcs-ref=511909ac51c09f6f232b905955005ff2943e0160 org.label-schema.usage=https://github.com/skycoin/skycoin/blob/511909ac51c09f6f232b905955005ff2943e0160/docker/images/dev-vscode/README.md org.label-schema.docker.cmd=xhost +; cd src; docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v :/go/src -w /go/src -e DISPLAY= skycoin/skycoindev-vscode:develop
-# 2018-11-17T02:44:22.435497468Z
+# 2018-12-23T06:23:22.370514847Z
+ LABEL org.label-schema.name=skycoindev-cli org.label-schema.description=Docker image with go, node, dev tools and Visual Studio Code for Skycoin developers org.label-schema.vendor=Skycoin project org.label-schema.url=skycoin.net org.label-schema.version=1.0.0-rc.1 org.label-schema.schema-version=1.0 org.label-schema.build-date=2018-12-23T06:17:31Z org.label-schema.vcs-url=https://github.com/skycoin/skycoin.git org.label-schema.vcs-ref=3eaf7a984f50fc015e2fb5da0d57528d4096a76e org.label-schema.usage=https://github.com/skycoin/skycoin/blob/3eaf7a984f50fc015e2fb5da0d57528d4096a76e/docker/images/dev-vscode/README.md org.label-schema.docker.cmd=xhost +; cd src; docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v :/go/src -w /go/src -e DISPLAY= skycoin/skycoindev-vscode:develop
+# 2018-12-23T06:23:25.181057989Z
  ENV DEBIAN_FRONTEND=noninteractive
-# 2018-11-17T02:44:23.887659903Z
- ENV HOME=/home/user
-# 2018-11-17T02:44:26.271847331Z
-|3 BDATE=2018-11-17T02:43:55Z SCOMMIT=511909ac51c09f6f232b905955005ff2943e0160 VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c useradd --create-home --home-dir $HOME user && chown -R user:user $HOME
-# 2018-11-17T02:46:36.87299327Z
-|3 BDATE=2018-11-17T02:43:55Z SCOMMIT=511909ac51c09f6f232b905955005ff2943e0160 VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg apt-utils libasound2 libatk1.0-0 libcairo2 libcups2 libexpat1 libfontconfig1 libfreetype6 libgtk2.0-0 libpango-1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 openssh-client xdg-utils dconf-editor dbus-x11 libfile-mimeinfo-perl xdg-user-dirs xsel --no-install-recommends && mkdir -p $HOME/.cache/dconf && mkdir -p $HOME/.config/dconf && chown user:user -R $HOME/.config && chown user:user -R $HOME/.cache && go get -v github.com/ramya-rao-a/go-outline && go get -v github.com/uudashr/gopkgs/cmd/gopkgs && go get -v github.com/acroca/go-symbols && go get -v github.com/stamblerre/gocode && go get -v github.com/ianthehat/godef && go get -v github.com/sqs/goreturns && ln -s /go/bin/gocode /go/bin/gocode-gomod && ln -s /go/bin/godef /go/bin/godef-gomod && npm install -g tslint typescript && curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | apt-key add - && echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list && apt-get update && apt-get -y install code && for ext in $VS_EXTENSIONS; do code --user-data-dir $HOME --install-extension $ext; done && apt clean && rm -rf /var/lib/apt/lists/*
-# 2018-11-17T02:46:39.566226755Z
- USER user
-# 2018-11-17T02:46:42.096982074Z
-|3 BDATE=2018-11-17T02:43:55Z SCOMMIT=511909ac51c09f6f232b905955005ff2943e0160 VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c xdg-user-dirs-update --force
-# 2018-11-17T02:46:43.681152885Z
+# 2018-12-23T06:23:28.01044918Z
+ ENV HOME=/home/skydev
+# 2018-12-23T06:23:32.420585493Z
+|3 BDATE=2018-12-23T06:17:31Z SCOMMIT=3eaf7a984f50fc015e2fb5da0d57528d4096a76e VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c useradd --create-home --home-dir $HOME skydev && chown -R skydev:skydev $HOME
+# 2018-12-23T06:27:42.320935041Z
+|3 BDATE=2018-12-23T06:17:31Z SCOMMIT=3eaf7a984f50fc015e2fb5da0d57528d4096a76e VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg apt-utils libasound2 libatk1.0-0 libcairo2 libcups2 libexpat1 libfontconfig1 libfreetype6 libgtk2.0-0 libpango-1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 openssh-client xdg-utils dconf-editor dbus-x11 libfile-mimeinfo-perl xdg-user-dirs xsel --no-install-recommends && mkdir -p $HOME/.cache/dconf && mkdir -p $HOME/.config/dconf && chown skydev:skydev -R $HOME/.config && chown skydev:skydev -R $HOME/.cache && go get -v github.com/ramya-rao-a/go-outline && go get -v github.com/uudashr/gopkgs/cmd/gopkgs && go get -v github.com/acroca/go-symbols && go get -v github.com/stamblerre/gocode && go get -v github.com/ianthehat/godef && go get -v github.com/sqs/goreturns && ln -s /go/bin/gocode /go/bin/gocode-gomod && ln -s /go/bin/godef /go/bin/godef-gomod && npm install -g tslint typescript && curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | apt-key add - && echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list && apt-get update && apt-get -y install code && for ext in $VS_EXTENSIONS; do code --user-data-dir $HOME --install-extension $ext; done && apt clean && rm -rf /var/lib/apt/lists/*
+# 2018-12-23T06:27:48.254990445Z
+ USER skydev
+# 2018-12-23T06:27:53.045116712Z
+|3 BDATE=2018-12-23T06:17:31Z SCOMMIT=3eaf7a984f50fc015e2fb5da0d57528d4096a76e VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c xdg-user-dirs-update --force
+# 2018-12-23T06:27:55.92954287Z
  USER root
-# 2018-11-17T02:46:44.24210079Z
-COPY file:ca21655f59d431be133c0e7e8c1724b5fbb121a10c89698ee4f1fb9ae8291b88 in /usr/local/bin/start.sh 
-# 2018-11-17T02:46:46.747747089Z
-|3 BDATE=2018-11-17T02:43:55Z SCOMMIT=511909ac51c09f6f232b905955005ff2943e0160 VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c ln -s usr/local/bin/start.sh /
-# 2018-11-17T02:46:49.45147484Z
-WORKDIR /home/user
-# 2018-11-17T02:46:50.927001128Z
+# 2018-12-23T06:27:57.15790022Z
+COPY file:1dbf5f997aae248050da521174379ef7ab64a6f3a8dc4b9396aa42634ba7d49b in /usr/local/bin/start.sh 
+# 2018-12-23T06:28:01.120965256Z
+|3 BDATE=2018-12-23T06:17:31Z SCOMMIT=3eaf7a984f50fc015e2fb5da0d57528d4096a76e VS_EXTENSIONS=ms-vscode.Go windmilleng.vscode-go-autotest defaltd.go-coverage-viewer eg2.tslint eamodio.gitlens vscodevim.vim /bin/sh -c ln -s usr/local/bin/start.sh /
+# 2018-12-23T06:28:03.92846715Z
+WORKDIR /go/src/github.com/skycoin/
+# 2018-12-23T06:28:07.001735098Z
  ENTRYPOINT ["start.sh"]
 ```
 

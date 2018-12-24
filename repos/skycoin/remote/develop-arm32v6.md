@@ -1,7 +1,7 @@
 # `skycoin/skycoin:develop-arm32v6`
 
 ```console
-$ docker pull skycoin/skycoin@sha256:98416b1aa76847d5c18d489655b08738cda07b56eb48fee763899ad4bd410cd8
+$ docker pull skycoin/skycoin@sha256:a933d6f9a2866bdc907ddf7de45a25cea2a3fbbd6e3cfee3dd4a51f4e847711c
 ```
 
 - Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -11,7 +11,7 @@ $ docker pull skycoin/skycoin@sha256:98416b1aa76847d5c18d489655b08738cda07b56eb4
 
 - Layers:
 	- sha256:712a9a7b47652499257bb96c6066b80042d8fe2616b9225141a21299f317e315
-	- sha256:cd701880cf96aa7751829d60a2f88c649b46bbaf6d69e8f3645bd06dc683a338
+	- sha256:da508342e9e65cdc0379d8501da033385ccbc3417a8c61dc2b0c15eb11afdc7b
 
 - Exposed Ports:
 	- 6000/tcp
@@ -22,19 +22,19 @@ $ docker pull skycoin/skycoin@sha256:98416b1aa76847d5c18d489655b08738cda07b56eb4
 ADD file:acc946308a1eec5d1a948cfdbf2e7f4988c3b4a45a2d2934dbe9f063ef53f150 in / 
 # 2018-10-03T07:49:31.20867797Z
  CMD ["sh"]
-# 2018-12-19T03:16:12.076227531Z
+# 2018-12-23T00:35:01.851999415Z
  ENV COIN=skycoin
-# 2018-12-19T03:16:12.378378803Z
+# 2018-12-23T00:35:02.046178759Z
  ENV RPC_ADDR=http://0.0.0.0:6420 DATA_DIR=/data/.skycoin WALLET_DIR=/wallet WALLET_NAME=.wlt
-# 2018-12-19T03:16:15.524072272Z
-COPY dir:a2ab75f2065a9b729170e9c92dd1d58bd48fd5165ab1e1d910e90adf6adb3680 in / 
-# 2018-12-19T03:16:15.739397401Z
+# 2018-12-23T00:35:05.252202058Z
+COPY dir:b3f781d3ce79016efa6e1b56d59753eb9b7b4f22fa089e2ea130697a25ae8a57 in / 
+# 2018-12-23T00:35:05.450429929Z
  VOLUME [/wallet]
-# 2018-12-19T03:16:15.8880563Z
+# 2018-12-23T00:35:05.614589627Z
  VOLUME [/data/.skycoin]
-# 2018-12-19T03:16:16.078535242Z
+# 2018-12-23T00:35:05.773266538Z
  EXPOSE 6000 6420
-# 2018-12-19T03:16:16.239640305Z
+# 2018-12-23T00:35:05.969729856Z
  ENTRYPOINT ["docker_launcher.sh" "--web-interface-addr=0.0.0.0" "--gui-dir=/usr/local/skycoin/src/gui/static"]
 ```
 
