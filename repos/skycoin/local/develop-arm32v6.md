@@ -1,10 +1,10 @@
-# `skycoin/skycoin:develop-arm32v7`
+# `skycoin/skycoin:develop-arm32v6`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8c86b5779f01221254b49825a89c739a2fca3360930de774b6ae3812fccbf4ae`
-- Created: `2018-12-19T03:18:12.374892982Z`
-- Virtual Size: ~ 56.18 Mb
+- Image ID: `sha256:a933d6f9a2866bdc907ddf7de45a25cea2a3fbbd6e3cfee3dd4a51f4e847711c`
+- Created: `2018-12-23T00:35:05.969729856Z`
+- Virtual Size: ~ 56.79 Mb
     (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker_launcher.sh","--web-interface-addr=0.0.0.0","--gui-dir=/usr/local/skycoin/src/gui/static"]`

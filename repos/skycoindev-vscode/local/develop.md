@@ -1,10 +1,10 @@
-# `simelotech/skycoindev-vscode:develop`
+# `skycoin/skycoindev-vscode:develop`
 
 ## Docker Metadata
 
-- Image ID: `sha256:880772790da57278a1d36aa40eab07a02a91617b36332deba7810d4407848f2e`
-- Created: `2018-11-13T03:29:25.125714893Z`
-- Virtual Size: ~ 2.56 Gb
+- Image ID: `sha256:c4cc0274e707df9b44b8f4e37554f16cfa4300b179f4969d623862feec494e14`
+- Created: `2018-12-23T06:28:07.001735098Z`
+- Virtual Size: ~ 2.58 Gb
     (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["start.sh"]`
@@ -17,5 +17,5 @@
     - `GOLANGCI_LINT=1.10.2`
     - `LD_LIBRARY_PATH=/usr/local/lib`
     - `DEBIAN_FRONTEND=noninteractive`
-    - `HOME=/home/user`
+    - `HOME=/home/skydev`
 

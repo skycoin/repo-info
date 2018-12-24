@@ -1,9 +1,13 @@
-# The systax of this file is as follows:
-# <folder under "repos">|<docker_image:tag>
+# The syntax of this file is simple: 
+# Just the name of the image as if you intend to make a docker pull
+# lines starting with # are comments (but you know that already right?)
 
-dev-cli|skycoin/skycoindev-cli:develop
-dev-docker|skycoin/skycoindev-cli:dind
-mainnet|skycoin/skycoin
-dev-python|skycoin/skycoindev-python:develop
-dev-vscode|simelotech/skycoindev-vscode:develop
-dev-vscode|simelotech/skycoindev-vscode:dind
+skycoin/skycoin
+skycoin/skycoindev-cli
+skycoin/skycoindev-python
+skycoin/skycoindev-vscode
+#skycoin/skycoin-web
+#skycoin/skywire
+#skycoin/skycoin-explorer
+#skycoin/cxo
+
