@@ -1,7 +1,7 @@
 # `skycoin/skycoindev-cli:dind`
 
 ```console
-$ docker pull skycoin/skycoindev-cli@sha256:dd314e3e553fd601a629afe6c87aec55f35d5a26cd57de38de36c4aa4541d6a8
+$ docker pull skycoin/skycoindev-cli@sha256:c9ba5965b722197ac1db7abab737fa0734caa879ea30a93d824a917702524c58
 ```
 
 - Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
@@ -28,16 +28,16 @@ $ docker pull skycoin/skycoindev-cli@sha256:dd314e3e553fd601a629afe6c87aec55f35d
 	- sha256:e02c8ca8db6a9edb34c3e55c82d5c568c950aa659d48d08825273c8bb614eece
 	- sha256:5d5ff637cdc943d63f64434ae881402ca1f8e5c2b90974b04f87743460104f89
 	- sha256:d6d7f50131e244da129810a3f26064bcc44a371146ead12b282180a759a83284
-	- sha256:9f44aecefad3c87559a20a5396d11ab04039d7e30aee08e72197d6b180c4c605
-	- sha256:1756c7652bb186a2be57b80a9271c4ae293b3ce98bbe5f61bc43c816936c6b44
-	- sha256:76fb62b76413d309c05dffee225b8066f6f7eab04cc19d7a93ce6252604c55c1
-	- sha256:b933c6c5bc9e513ae8c9868a2469fa25da20f94e0ba33823f928b2912bff6214
-	- sha256:cf800d5b738b6a19adf0e2a011336cac009dfe64e06671d327ef60bb1ff79b9d
-	- sha256:f5a09baabdd1a8c41c60e17a88a768f6410cb2b1d42555959b5abe2177f7f413
-	- sha256:3a051a01d82805ce315cdcf3523d7d54d3e8b8f92ffe679e57db2d3a4e12d6e9
-	- sha256:8c8c5c4cf9eb289a2c17c8a470ed0899779977d63bb980bd6e0bc45e52b33893
-	- sha256:a9495bf967f8dc31e0e10ca276fe07ba1afc556107e9916ca17b68e8c3978d3f
-	- sha256:16a4612824b1549462fc2d416801490927548e805681df003fc10f8bd0d351c4
+	- sha256:7fbd2ca54972c04a3fd9a90e6734b3c8ba584b7f5e2da48d44796bb4ada57a30
+	- sha256:aeb5079f9d401069a75d293b13eb79eb56657fe0a4dc8a32599ed4cf89898aec
+	- sha256:c30bae398352d8fc480a8b4649d9afc5733223878cc3f606b92eee33776eb675
+	- sha256:14306553ac3fa25b7196a3fabd53e5c80f82ff8e6d04ff38eca3bf74dd9a2268
+	- sha256:5c046ac2e85b850760444b1a133e31d390272ea74e1821f2dd38454f07be95f2
+	- sha256:debaaf251e5557e3c92465962a0ca26312f753665568859d94500e1a088ad470
+	- sha256:671114201cedbffd997cc43e554d518e850385c7de51ce76745e0378de7a83e4
+	- sha256:0b5925d90fc6c522ca3519ae7f7c87dbac756350a7d484565883e503242d939f
+	- sha256:3acf8ab1578d3e1b9a20f642baa15bde3ba5331f9b161ec99fff21d205d13502
+	- sha256:cd2bf09dcda105482e831a91fa4983145a623d72607c80ab94cff68120f22943
 
 - Exposed Ports:
 	- 2375/tcp
@@ -99,35 +99,41 @@ WORKDIR /go/src/github.com/skycoin
  VOLUME [/go/src/]
 # 2018-11-05T09:11:26.712937423Z
  ENV LD_LIBRARY_PATH=/usr/local/lib
-# 2018-11-05T09:27:03.358540248Z
-/bin/sh -c curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-# 2018-11-05T09:27:07.717991897Z
-/bin/sh -c apt-key fingerprint 0EBFCD88
-# 2018-11-05T09:27:24.900537578Z
-/bin/sh -c set -ex; apt-get update; apt-get install -y --no-install-recommends lsb-release software-properties-common apt-transport-https
-# 2018-11-05T09:27:28.434791736Z
-/bin/sh -c add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-# 2018-11-05T09:27:55.974214127Z
-/bin/sh -c set -ex; apt-get update; apt-get install -y --no-install-recommends btrfs-progs e2fsprogs iptables xfsprogs ca-certificates gnupg2 software-properties-common pigz docker-ce ; apt-get clean; rm -rf /var/lib/apt/lists/*
-# 2018-11-05T09:27:56.583699222Z
-COPY file:7542b8556b602563f72a47a7602958d8aaa7570b8d1decd67f014edcd7840d56 in /usr/local/bin/modprobe 
-# 2018-11-05T09:27:59.060525719Z
-/bin/sh -c set -x && groupadd dockremap && useradd -g dockremap dockremap && echo 'dockremap:165536:65536' >> /etc/subuid && echo 'dockremap:165536:65536' >> /etc/subgid
-# 2018-11-05T09:28:00.535261369Z
+# 2018-12-29T04:17:34.010834743Z
+ ARG BDATE
+# 2018-12-29T04:17:36.807024577Z
+ ARG SCOMMIT
+# 2018-12-29T04:17:41.541341906Z
+ LABEL org.label-schema.name=skycoindev-cli:dind org.label-schema.description=Skycoin cli develop image with docker in docker support org.label-schema.vcs-url=https://github.com/skycoin/skycoin/tree/develop/docker/images/dev-docker org.label-schema.vendor=Skycoin project org.label-schema.url=skycoin.net org.label-schema.schema-version=1.0 org.label-schema.build-date=2018-12-29T04:17:30Z org.label-schema.vcs-ref=943c61fdf38f5b785ad6bb5af052b08a2438a84c org.label-schema.version=1.0.0-rc.1 org.label-schema.usage=https://github.com/skycoin/skycoin/blob/943c61fdf38f5b785ad6bb5af052b08a2438a84c/docker/images/dev-docker/README.md org.label-schema.docker.cmd=mkdir src; docker run --privileged --rm -v src:/go/src skycoin/skycoindev-cli:dind go get github.com/skycoin/skycoin; sudo chown -R `whoami` src
+# 2018-12-29T04:17:48.810843243Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+# 2018-12-29T04:17:53.602002846Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c apt-key fingerprint 0EBFCD88
+# 2018-12-29T04:18:28.153893938Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c set -ex; apt-get update; apt-get install -y --no-install-recommends lsb-release software-properties-common apt-transport-https ; apt clean
+# 2018-12-29T04:18:35.05546054Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+# 2018-12-29T04:19:41.763215353Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c set -ex; apt-get update; apt-get install -y --no-install-recommends btrfs-progs e2fsprogs iptables xfsprogs ca-certificates gnupg2 software-properties-common pigz docker-ce ; apt-get clean; rm -rf /var/lib/apt/lists/*
+# 2018-12-29T04:19:43.099459754Z
+COPY file:0ff334137ab3c7f337825e77ae9b6ddeaabfd2480f2d13e240ab8703e4f2799d in /usr/local/bin/modprobe 
+# 2018-12-29T04:19:47.005719832Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c set -x && groupadd dockremap && useradd -g dockremap dockremap && echo 'dockremap:165536:65536' >> /etc/subuid && echo 'dockremap:165536:65536' >> /etc/subgid
+# 2018-12-29T04:19:51.021171415Z
  ENV DIND_COMMIT=3b5fac462d21ca164b3778647420016315289034
-# 2018-11-05T09:28:03.128148195Z
-/bin/sh -c set -ex; wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; chmod +x /usr/local/bin/dind;
-# 2018-11-05T09:28:05.029516132Z
-COPY file:8c7efafc9ff2ddd0b88764e8647f34ab4c5bca079a93694700343d4603f7f8a6 in /usr/local/bin/ 
-# 2018-11-05T09:28:07.047217858Z
-chmod +x /usr/local/bin/dockerd-entrypoint.sh /usr/local/bin/modprobe
-# 2018-11-05T09:28:08.564376443Z
+# 2018-12-29T04:19:56.813195198Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c /bin/sh -c set -ex; wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; chmod +x /usr/local/bin/dind;
+# 2018-12-29T04:19:57.703561982Z
+COPY file:e82a7fee66034819c74677656e5489b7fdf65461becbff1d66a4234753f057bf in /usr/local/bin/ 
+# 2018-12-29T04:20:01.515427651Z
+|2 BDATE=2018-12-29T04:17:30Z SCOMMIT=943c61fdf38f5b785ad6bb5af052b08a2438a84c chmod +x /usr/local/bin/dockerd-entrypoint.sh /usr/local/bin/modprobe
+# 2018-12-29T04:20:04.544562638Z
  VOLUME [/var/lib/docker]
-# 2018-11-05T09:28:10.077011982Z
+# 2018-12-29T04:20:07.314395447Z
  EXPOSE 2375
-# 2018-11-05T09:28:11.582953745Z
+# 2018-12-29T04:20:09.899332858Z
  ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
-# 2018-11-05T09:28:13.111467636Z
+# 2018-12-29T04:20:11.940079047Z
  CMD []
 ```
 
