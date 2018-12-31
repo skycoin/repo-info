@@ -1,0 +1,56 @@
+# `skycoin/teller:develop`
+
+```console
+$ docker pull skycoin/teller@sha256:b82e08d424a93caab6c05a8cbd9f2bb626bba6e34741224cae4838ad004c6058
+```
+
+- Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+
+- Platform: 
+	- linux, amd64
+
+- Layers:
+	- sha256:717b092b8c86356cf976d9c83fa6f0ea67f2bf3148a5bbb7e02026a5d3245e68
+	- sha256:494e6f2f630963523d68d8585d640892d8079a9015b0e5e26ec4baa6b9b66e3f
+	- sha256:cb497c96779aa2792009abb203858715eb63f64120768a93cb8946acf297d827
+	- sha256:5217e06a87ce6420ad1e6eac3e7eb6ec5608b00b7ca04db8f1a26ac26c6df953
+	- sha256:58f7726e372a2f9b5de7028cae6736df786f3940796ef2f02085f6191b7f7d5f
+	- sha256:2498942c41424d3bd13e60a87e22ccf70766dd0080ddbff6f084385bb92e9e27
+	- sha256:5b8343986e5aed415207ce0de36288e5ed2c061494530f5bed7f8e323f068dbd
+
+- Exposed Ports:
+	- 4121/tcp
+	- 7071/tcp
+	- 7711/tcp
+
+```dockerfile
+# 2018-07-06T14:13:45.666164062Z
+ADD file:6ee19b92d5cb1bf143947fe2e2481cb3b353d42e1e54888a8ba48c03dd4155f2 in / 
+# 2018-07-06T14:13:45.901173503Z
+ CMD ["/bin/sh"]
+# 2018-07-28T02:26:33.86011334Z
+ ENV DATA_DIR=/data
+# 2018-07-28T02:26:34.877640941Z
+/bin/sh -c adduser -D teller
+# 2018-07-28T02:26:35.022190392Z
+ USER teller
+# 2018-07-28T02:26:37.266977298Z
+COPY multi:a9973ce36906ce1b799be51dae223d0f10f12e846db629a82a1a522af7f5bddd in /usr/bin/ 
+# 2018-07-28T02:26:37.80029637Z
+COPY dir:f23cd31504e348d113564fbbc0f1b0d0460fc81beb9bedabec11cbc8fbe0b29c in /usr/local/teller/web/build 
+# 2018-07-28T02:26:38.005360276Z
+COPY file:6a024b72fd3907e103bc9b275bae913ddf3e5e1226d4298a899d82fe8d68d247 in /usr/local/teller/ 
+# 2018-07-28T02:26:38.211968909Z
+COPY file:ba4c718dea16ce527b86e43f2ce20b21be16d17d305ced57f168e222ba5708e3 in /usr/local/teller/ 
+# 2018-07-28T02:26:38.415343015Z
+COPY file:6eb3ff9597f2cb1b9fbfc7023476bd58b2812f5cc8e77d30a81a63fb6b0d88ff in /usr/local/teller/ 
+# 2018-07-28T02:26:38.552570064Z
+ VOLUME [/data]
+# 2018-07-28T02:26:38.7262423Z
+ EXPOSE 4121 7071 7711
+# 2018-07-28T02:26:38.876202947Z
+WORKDIR /usr/local/teller
+# 2018-07-28T02:26:39.02589467Z
+ CMD ["teller"]
+```
+
