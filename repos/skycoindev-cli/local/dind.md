@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:059f9228a6dfe11c08e475b383cd851edbbb2d11ee766cc4067e329f3b6ce5c2`
-- Created: `2018-10-21T05:43:11.428595401Z`
-- Virtual Size: ~ 2.39 Gb
+- Image ID: `sha256:c9ba5965b722197ac1db7abab737fa0734caa879ea30a93d824a917702524c58`
+- Created: `2018-12-29T04:20:11.940079047Z`
+- Virtual Size: ~ 2.44 Gb
     (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/dockerd-entrypoint.sh"]`
 - Environment:
     - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-    - `GOLANG_VERSION=1.11.1`
+    - `GOLANG_VERSION=1.11.2`
     - `GOPATH=/go`
     - `NODE_VERSION=10.2.1`
     - `YARN_VERSION=1.7.0`

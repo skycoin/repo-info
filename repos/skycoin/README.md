@@ -1,16 +1,17 @@
-# `skycoin` repo-info
+# `skycoin/skycoin` repo-info
 
-This directory contains additional information about the published artifacts of [the `skycoin` official image](https://hub.docker.com/_/skycoin/).
+This directory contains additional information about the published artifacts of [the `skycoin/skycoin` image](https://hub.docker.com/r/skycoin/skycoin).
 
-- [the `remote` directory](remote/):
+-   [the `remote` directory](remote/):
 
- - gathered from the Docker Hub/Registry API
+    -   Gathered from the Docker Hub/Registry API
+    -   Manifest data, platform, layers, exposed ports, dockerfile recipe...
+    -   environment variables, dates, etc.
 
- - image digests/blobs, transfer sizes, image metadata, etc.
+-   [the `local` directory](local/):
 
-- [the `local` directory](local/):
+    -   Inspected from the image on-disk after it is pulled
+    -   Image ID, creation date, virtual size, architecture, environment and entry point
 
- - inspected from the image on-disk after it is pulled
-
- - installed packages, creation date, architecture, environment variables, detected licenses, etc.
+Also, the file [tag_list.md](tag_list.md) has the list of all tags covered on this directory with links to it's details.
 
