@@ -35,17 +35,17 @@ for image in ${IMAGES} ; do
     echo ">>> Processing image '${image}'"
 
     # get simple image name, without the org part and start to process
-    img=`echo $image | awk -F '/' '{print $2}'` 
+    img=`echo $image | awk -F '/' '{print $2}'`
     wf="$basepath/$lpath/$img"
     mkdir -p "$wf"
     ln -s "$basepath/drib.sh" "$wf/"
     cd "$wf"
 
     # process
-    ./drib.sh -a "$image"
+    ./drib.sh -a "$image" -f "(^latest.*$)|(^develop.*$)|(^release.*$)|(^arm.*$)|(^dind$)"
 
     # cleanup
-    rm -f drib.sh &> /dev/null 
+    rm -f drib.sh &> /dev/null
 
     # erasing the downloaded images to save space
     echo ""
@@ -55,5 +55,4 @@ done
 
 # final clean up
 cd "$basepath"
-rm -f drib.sh &> /dev/null 
-
+rm -f drib.sh &> /dev/null
